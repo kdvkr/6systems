@@ -1,0 +1,339 @@
+// Variables
+$color-black: #000000;
+$color-white: #FFFFFF;
+$color-grey: #E6E6E6;
+$color-orange: #FF7D19;
+
+// Mixins
+@mixin clearfix {
+    &::after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+}
+
+// General rules
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+input {
+    background-color: $color-grey;
+    border: none;
+    padding: 15px 5px;
+}
+
+a {
+    color: $color-black;
+    text-decoration: none;
+
+    &:hover,
+    :focus {
+        color: $color-black;
+        text-decoration: underline;
+    }
+}
+
+// Header
+header {
+    @include clearfix;
+    background-color: $color-black;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.logo {
+    background: url("../img/sixt_logo.svg") no-repeat;
+    background-size: cover;
+    display: inline-block;
+    height: 60px;
+    width: 140px;
+
+    @media screen and (min-width: 560px){
+        width: 320px;
+    }
+}
+
+.nav {
+    float: right;
+    padding-top: 20px;
+
+    &-link {
+        color: $color-white;
+        display: inline-block;
+
+        &:first-child {
+            margin-right: 8px;
+        }
+
+        &:hover,
+        :focus {
+            color: $color-white;
+        }
+    }
+
+    &-icon {
+        height: 27px;
+        width: 25px;
+    }
+}
+
+// Slider
+.slider {
+    &-container {
+        position: relative;
+    }
+
+    &-wrapper {
+        margin: 0;
+        padding: 0;
+        position: relative;
+    }
+
+    &-slide {
+        display: none;
+        list-style-type: none;
+    }
+
+    &-image {
+        height: auto;
+        width: 100%;
+    }
+
+    &-controls {
+        @include clearfix;
+        left: 0;
+        margin-top: -15px;
+        padding: 0 40px;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        z-index: 2;
+    }
+
+    &-control {
+        &-left {
+            float: left;
+            transform: rotate(180deg);
+        }
+
+        &-right {
+            float: right;
+        }
+    }
+}
+
+[class*="slider-control-"] {
+    background: $color-black;
+    display: inline-block;
+    height: 40px;
+    opacity: .5;
+    width: 40px;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &::after {
+        background: url("../img/slider_arrow_icon.svg") center / 10px 17px no-repeat;
+        content: "";
+        display: block;
+        height: 40px;
+        width: 40px;
+    }
+}
+
+// Form
+.booking {
+    @include clearfix;
+    padding: 10px 0;
+
+    &-heading {
+        @include clearfix;
+        padding: 20px 0;
+    }
+
+    &-title {
+        margin: 0 10px 0 0;
+        text-transform: uppercase;
+    }
+
+    &-change {
+        display: inline-block;
+        float: right;
+        font-size: 12px;
+        line-height: 20px;
+        margin: 10px 0 0 20px;
+    }
+
+    &-location {
+        background: $color-grey url("../img/location_icon.svg") 10px center / 18px 26px no-repeat;
+        padding-left: 38px;
+        width: 100%;
+    }
+
+    &-period {
+        @include clearfix;
+    }
+
+    &-pickup {
+        padding-right: 3px;
+    }
+
+    &-return {
+        padding-left: 3px;
+    }
+
+    &-pickup,
+    &-return {
+        .booking-heading {
+            padding-top: 30px;
+        }
+    }
+
+    &-date {
+        float: left;
+        width: 60%;
+    }
+
+    &-time {
+        float: left;
+        width: 40%;
+    }
+
+    &-submit {
+        background-color: $color-orange;
+        border: none;
+        color: $color-white;
+        font-weight: 700;
+        margin: 20px 0 30px;
+        padding: 15px 0;
+        text-align: center;
+        text-transform: uppercase;
+        width: 100%;
+
+        &::after {
+            content: "Preise ermitteln";
+            display: inline-block;
+        }
+    }
+}
+
+// Links
+.links {
+    @include clearfix;
+
+    a {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        padding-right: 20px;
+        position: relative;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+        
+        &::after {
+            background-color: $color-black;
+            background-size: cover;
+            content: "";
+            display: block;
+            height: 11px;
+            right: 0;
+            position: absolute;
+            top: 3px;
+            width: 7px;
+            -webkit-mask-image: url("../img/link_icon.svg");
+                    mask-image: url("../img/link_icon.svg");
+        }
+    }
+}
+
+// Responsiveness
+@media screen and (min-width: 360px){
+    .booking {
+        &-title {
+            margin-right: 0;
+        }
+
+        &-change {
+            margin: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 400px){
+    .nav {
+        &-link {
+            font-size: 18px;
+
+            &:first-child {
+                margin-right: 30px;
+            }
+        }
+
+        &-icon {
+            margin-left: 5px;
+        }
+    }
+}
+
+@media screen and (min-width: 992px){
+    .booking {
+        background-color: $color-white;
+        margin: -180px auto 0;
+        padding: 0 20px 20px;
+        position: relative;
+        width: 90%;
+        z-index: 1;
+
+        &-heading {
+            padding-bottom: 5px;
+        }
+
+        &-pickup,
+        &-return {
+            .booking-heading {
+                padding-top: 20px;
+            }
+        }
+
+        &-submit {
+            margin: 45px 0 0;
+            padding-bottom: 10px;
+
+            &::after {
+                background: url("../img/button_arrow_icon.svg") center / 14px 20px no-repeat;
+                content: "";
+                height: 20px;
+                width: 20px;
+            }
+        }
+
+        [class*="col-md-"] {
+            padding: 0 8px;
+        }
+    }
+
+    .links {
+        padding-left: calc(5% + 28px);
+        padding-top: 15px;
+
+        a {
+            color: $color-white;
+
+            &::after {
+                background-color: $color-white;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1600px){
+    .container {
+        width: 1570px;
+    }
+}

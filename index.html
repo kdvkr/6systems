@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sixt - rent a car</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dist/css/style.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <header>
+                <a href="/" class="logo"></a>
+                <div class="nav">
+                    <a href="/" class="nav-link">Login<img src="dist/img/login_icon.png" alt="login" class="nav-icon"></a>
+                    <a href="/" class="nav-link">Menu<img src="dist/img/burger_menu_icon.png" alt="menu" class="nav-icon"></a>
+                </div>
+            </header>
+        </div>
+        <div class="row">
+            <div class="slider-container">
+                <ul class="slider-wrapper">
+                    <li class="slider-slide"><img src="dist/img/slides/slide1.jpg" class="slider-image" alt="slide1"></li>
+                    <li class="slider-slide"><img src="dist/img/slides/slide2.jpg" class="slider-image" alt="slide2"></li>
+                    <li class="slider-slide"><img src="dist/img/slides/slide3.jpg" class="slider-image" alt="slide3"></li>
+                </ul>
+                <div class="slider-controls">
+                    <span class="slider-control-left" id="controlLeft"></span>
+                    <span class="slider-control-right" id="controlRight"></span>
+                </div>
+            </div>
+            <form class="booking">
+                <div class="col-xs-12 col-md-5">
+                    <div class="booking-heading">
+                        <label for="location" class="booking-title">Abholung & Ruckgabe</label>
+                        <a class="booking-change" href="/">Ruckgabe andern</a>
+                    </div>
+                    <input id="location" class="booking-location" type="text" placeholder="Faro Flughafen">
+                </div>
+                <div class="col-xs-6 col-md-3 booking-pickup">
+                    <div class="booking-heading">
+                        <label for="pickupDate" class="booking-title">Abholzeit</label>
+                    </div>
+                    <div class="booking-period">
+                        <input id="pickupDate" class="booking-date" type="text" placeholder="15.07.2017">
+                        <input class="booking-time" type="text" placeholder="12:00">
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-3 booking-return">
+                    <div class="booking-heading">
+                        <label for="returnDate" class="booking-title">Ruckgabezeit</label>
+                    </div>
+                    <div class="booking-period">
+                        <input id="returnDate" class="booking-date" type="text" placeholder="16.07.2017">
+                        <input class="booking-time" type="text" placeholder="09:00">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-1">
+                    <button class="booking-submit" type="submit"></button>
+                </div>
+            </form>
+            <div class="col-xs-12 links">
+                <a href="/">Zustellung und Abholung</a>
+                <a href="/">Umbuchen &amp; Stornieren</a>
+                <a href="/">Sixt Kundenlogin</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="dist/libs/jquery.min.js"></script>
+    <script src="dist/js/main.min.js"></script>
+</body>
+</html>
